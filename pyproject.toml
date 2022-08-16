@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 90
+include = '''
+(
+    (
+        filament_dryer_script_generator
+      | tests
+      | .github
+    )/.*\.pyi?$
+)|(
+    setup\.py
+)
+'''
