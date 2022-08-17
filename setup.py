@@ -2,7 +2,7 @@
 
 """The setup script."""
 
-from setuptools import find_packages, setup
+from setuptools import setup
 
 with open("README.rst") as readme_file:
     readme = readme_file.read()
@@ -18,7 +18,7 @@ setup(
     description="Generates a gcode file to set your 3D printer's bed or enclosure to a specific temperature for a set amount of time in order to dry spools of filament.",
     entry_points={
         "console_scripts": [
-            "filament_dryer_script_generator=filament_dryer_script_generator.__main__:main",
+            "filament_dryer_script_generator=filament_dryer_script_generator:main",
         ],
     },
     install_requires=requirements,
@@ -28,12 +28,10 @@ setup(
     include_package_data=True,
     keywords="filament_dryer_script_generator",
     name="filament_dryer_script_generator",
-    packages=find_packages(
-        include=["filament_dryer_script_generator", "filament_dryer_script_generator.*"]
-    ),
+    py_modules=["filament_dryer_script_generator"],
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/kforth/Filament-Dryer-Script-Generator",
-    version="0.2.0",
+    version="0.2.2",
     zip_safe=False,
 )
